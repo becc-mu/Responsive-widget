@@ -15,6 +15,15 @@ request.onload = () => {
     //console.log("sucess you are connected to api")
     //console.log(request.responseText);
     let myObj = JSON.parse(request.responseText);
+    if (myObj !== null){
+      let list = myObj.list;
+      if (list.length < 6) {
+        console.error("Oops something is not right")
+        return;
+      } else {
+        console.log(list.length)
+      }
+    }
   } else {
     console.log("Oops no connection!")
   }
