@@ -8,8 +8,17 @@ var request = new XMLHttpRequest()
 // Open a new connection, using the GET request on the URL endpoint
 request.open('GET', newRequest, true)
 
-request.onload = function () {
+request.onload = () => {
   // Begin accessing JSON data here
+  let data = JSON.parse(request.response)
+  if (request.status >= 200 && request.status < 400) {
+    //console.log("sucess you are connected to api")
+    //console.log(request.responseText);
+    let myObj = JSON.parse(request.responseText);
+  } else {
+    console.log("Oops no connection!")
+  }
+
   }
 
 
