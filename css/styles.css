@@ -1,0 +1,100 @@
+/* Reset boarder box */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.3em;
+  /* color: #ccc; */
+  /* background: #000; */
+  margin-bottom: 70px;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card .content {
+    flex: 1 1 auto;
+}
+.media {
+    display: flex;
+    align-items: flex-start;
+}
+.media .content {
+    flex: 1;
+    padding: 10px;
+}
+section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+article,
+aside {
+  flex-basis: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+
+
+.responsive-image {
+  max-width: 100%;
+  flex: 1;
+  padding: 10px;
+
+}
+
+.cell img {
+  display: block;
+}
+
+/* Mobile first styles go here */
+
+@media screen and (min-width: 760px) {
+  /* Desktop styles go here */
+  article {
+    flex: 1;
+    flex-wrap: wrap;
+   .cell {
+     width: calc(100% / 1);
+   }
+ }
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 760px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+   flex-wrap: wrap;
+  article {
+    flex-wrap: wrap;
+    width: calc(100% / 3);
+
+  }
+}
