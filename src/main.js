@@ -25,21 +25,25 @@ request.onload = () => {
   var myObj = JSON.parse(request.responseText);
   list = myObj.list
 
-
    for(var i=0; i < 6; i++){
-     var card = document.createElement('div');
+     var card = document.createElement('a');
+     card.setAttribute('href', list[i].url);
      card.setAttribute('class', 'card');
 
+     var link = document.getElementsByClassName('link')
+     link.href = list[i].url
 
      var itemTitle = document.createElement('a');
      itemTitle.innerHTML = list[i].name;
-     setAttributes(itemTitle, {'href': list[i].url, 'class': 'item_title'});
 
      var image = document.createElement('img');
-      setAttributes(image, {'src': list[i].thumbnail[0].url, 'width': list[i].thumbnail[0].width, 'height': list[i].thumbnail[0].height, 'class': 'image','a': list[i].name, 'href': list[i].url})
+     setAttributes(image, {'src': list[i].thumbnail[0].url, 'class': 'image','a': list[i].name, 'href': list[i].url})
+      image.href = '#';
+
      var category = document.createElement('p')
      var branding = document.createElement('p');
      branding.innerHTML = list[i].branding
+
      category.innerHTML = list[i].categories
 
      setAttributes(branding, { 'class': 'branding'});
@@ -51,8 +55,8 @@ request.onload = () => {
      card.appendChild(image);
      card.appendChild(itemTitle);
      card.appendChild(branding);
-   }
 
+   }
 }
 // Send request
 request.send();
