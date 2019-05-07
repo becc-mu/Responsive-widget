@@ -12,6 +12,11 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+body {
+ font-family: 'Tangerine', serif;
+ font-size: 48px;
+}
+
 h1 {
   font-size: 1.5rem;
 }
@@ -24,25 +29,53 @@ img {
   max-width: 100%;
 
 }
+
 a {
   text-decoration: none;
-  font-size: x-large;
+  font-size: 1.5rem;
   color: unset;
-  margin: 1rem;
-  display: block;
+  margin-top: 1rem;
+  font-family: sans-serif;
+  place-content: flex-start;
+  padding-left: 0.5rem;
+  margin-block-end: auto;
+  display: -webkit-box;
+  max-width: 450px;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  font-weight: 800;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
+.widgeitHeader {
+    text-align: left;
+    margin-left: 60px;
+    font-family: Tangerine;
+}
+.branding, .category{
+  text-transform: capitalize;
+   font-size: 1.5rem;
+   margin-left: 0;
+   color: #635f5f;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+   clear: both;
+   padding-left: 0.5rem;
+   vertical-align: bottom;
 }
 .container {
   display: flex;
   flex-wrap: wrap;
+  margin: 5%;
 }
 
 .card {
-    margin: 1rem;
+    margin: 0.7rem;
     background: white;
     box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
     overflow: hidden;
-    transition: all .2s linear;
+    /* transition: all .2s linear; */
 
 }
 section {
@@ -73,6 +106,9 @@ aside {
 
 /* Mobile first styles go here */
 @media screen and (min-width: 600px) {
+  .card {
+    flex: 1 1 calc(100% - 1rem);
+  }
   main {
   padding:0;
 }
@@ -83,10 +119,10 @@ aside {
   .card {
     flex: 1 1 calc(50% - 2rem);
   }
+}
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1024px) {
   main {
-  padding:10%;
 }
   .card {
     flex: 1 1 calc(33% - 2rem);
