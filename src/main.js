@@ -27,23 +27,19 @@ request.onload = () => {
 
    for(var i=0; i < 6; i++){
      var card = document.createElement('a');
-     card.setAttribute('href', list[i].url);
-     card.setAttribute('class', 'card');
+     setAttributes(card, {'href': list[i].url, 'class': 'card'});
 
-     var link = document.getElementsByClassName('link')
-     link.href = list[i].url
 
      var itemTitle = document.createElement('a');
      itemTitle.innerHTML = list[i].name;
 
      var image = document.createElement('img');
-     setAttributes(image, {'src': list[i].thumbnail[0].url, 'class': 'image','a': list[i].name, 'href': list[i].url})
-      image.href = '#';
+     setAttributes(image, {'src': list[i].thumbnail[0].url, 'class': 'image'})
 
      var category = document.createElement('p')
      var branding = document.createElement('p');
-     branding.innerHTML = list[i].branding
 
+     branding.innerHTML = list[i].branding
      category.innerHTML = list[i].categories
 
      setAttributes(branding, { 'class': 'branding'});
